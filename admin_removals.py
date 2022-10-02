@@ -41,7 +41,7 @@ def check_mod_log():
 	last_pass = (time.time() - 604800)
 	
 	# Bot will cycle through its entire mod list, updating wiki pages, and sending mail.  Bot should only have wiki perms.
-	for subreddit in reddit.redditor("notesbot").moderated():
+	for subreddit in reddit.redditor("YOUR_MOD_ACCOUNT").moderated():
 		try:
 			subreddit.display_name
 			print(f'Gathering stats on r/{subreddit.display_name}.')
