@@ -169,7 +169,7 @@ def check_mod_log():
 
 			print(f'> Done with r/{subreddit.display_name}')
 			# In case of rate limits on sending modmails. 
-			time.sleep(2)
+			time.sleep(10)
 
 		except Exception as e:
 			print(f"\t### ERROR - Something went wrong.\n\t{e}")
