@@ -1,4 +1,4 @@
-#  GatherStats bot v1.0 by u/BuckRowdy
+#  AdminRemovalsReportBot v1.0 by u/BuckRowdy
 #  Add this bot with wiki perms only.
 
 from pmaw import PushshiftAPI
