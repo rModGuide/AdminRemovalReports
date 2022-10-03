@@ -29,9 +29,11 @@ def check_mod_log():
 	"""This script runs on a weekly schedule on crontab, or can be run manually.  
 	   It polls the mod log for admin-level removals in the past 7 days.
 	   It will create three tables: comments, posts, and a catch-all for all other mod actions.
-	   The bot updates a wiki page in your subreddit, with the data.
-	   It will contact PushShift for the original text of comments and reproduce them if possible. 
-	   Original post titles are not reproduced in this version of the bot.   
+	   The bot updates a wiki page in your subreddit with the weekly data.
+	   It will contact PushShift for the original text of comments and post titles and reproduce them if possible. 
+	   The bot is configured to run on the entire modlist of the account that it runs on.  
+	   It can easily be edited to run on one single subreddit. 
+	     
 	"""
 	print('Now processing your mod log...')
 	# Set up a variable for finding the last 7 days worth of posts. 
