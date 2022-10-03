@@ -6,7 +6,6 @@ from datetime import datetime as datetime
 import praw
 import traceback
 import time
-import sys
 
 # Login to reddit
 try:
@@ -20,7 +19,6 @@ try:
 except Exception as e:
 	print(f"\t### ERROR - Could not login.\n\t{e}")
 	traceback.print_exc()
-	sys.exit(1)
 
 print(f'Logged in as: {reddit.user.me()}')
 
@@ -172,9 +170,7 @@ def check_mod_log():
 
 		except Exception as e:
 			print(f"\t### ERROR - Something went wrong.\n\t{e}")
-			traceback.print_exc()
-			sys.exit(1)
-				
+			traceback.print_exc()			
 
 
 check_mod_log()
