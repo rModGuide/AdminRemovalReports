@@ -1,5 +1,6 @@
 #  AdminRemovalsReportBot v1.0 by u/BuckRowdy
 #  Add this bot with wiki perms only.
+# Multi-Sub version of the bot will run on every sub in the bot's modlist.
 
 from pmaw import PushshiftAPI
 from datetime import datetime as datetime
@@ -67,7 +68,6 @@ def check_mod_log():
 						# Once you have the comment id, search pushshift for the comment's body text.				
 						comment_search = api.search_comments(ids = comment_id) 	
 						comment_list = [comment for comment in comment_search]
-						# Set up a list for list entries. 
 						
 						# This block takes the original comment body (if archived) and condenses it, removing new lines.  
 						for comment in comment_list:							
