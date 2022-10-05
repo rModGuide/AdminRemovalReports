@@ -80,7 +80,7 @@ def check_mod_log():
 							else:
 								body_text = 'No comment body text found'	
 						# Add each admin removal comment to a list set up for a reddit markdown table. 
-						user_comments.append(f'{log_mod} | u/{target_author} | {user_banned} | {time_stamp} | {body_text} | [{thread_id}]({target_link})')
+						user_comments.append(f'{body_text} | {log_mod} | u/{log_author} | {user_banned} | {time_stamp} | [{thread_id}]({target_link})')
 						# Count the number of admin removed comments.
 						comment_counter = len(user_comments)
 						
