@@ -2,11 +2,11 @@
 
 A bot to post a summary of admin-level removals in your subreddit. 
 
-This bot is designed to run as a cronjob, once a week.  In windows this is done via the Task Scheduler.  
+This bot is designed to run as a cronjob, once a week.  In windows this is done via the [Task Scheduler](https://active-directory-wp.com/docs/Usage/How_to_add_a_cron_job_on_Windows/Scheduled_tasks_and_cron_jobs_on_Windows/index.html).  
 
 Cronjobs on MacOS and Linux are done via the [crontab](https://betterprogramming.pub/https-medium-com-ratik96-scheduling-jobs-with-crontab-on-macos-add5a8b26c30).
 
-This bot was written for python 3.9 and the most recent version of PRAW and PMAW. 
+This both was written for python 3.9 and the most recent version of PRAW and PMAW. 
 
 Install bot of those via these links [PRAW](http://praw.readthedocs.io) and [PMAW](https://pypi.org/project/pmaw/).
 
