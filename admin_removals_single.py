@@ -13,7 +13,9 @@ try:
 	reddit = praw.Reddit(   user_agent = 'AdminRemovalReportBot v2.0 by u/BuckRowdy to gather info from the mod log',
 				client_id = '',
 				client_secret = '',
-				refresh_token = '')
+			        user_name = '',
+				password = ''
+			     )
 
 except Exception as e:
 	print(f"\t### ERROR - Could not login.\n\t{e}")
