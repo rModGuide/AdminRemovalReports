@@ -45,7 +45,8 @@ def accept_invite():
 						# Send a new message to the subreddit informing them of the new wiki page for reports. 
 						subreddit.message("Thank you for the invite.", f"Thank you for inviting me to the sub.  I'll get right to work preparing your report.\n\n[I've created this wiki page which is where I will post weekly updates.](http://reddit.com/r/{subreddit}/wiki/AdminRemovalReport)\n)")
 						# Create the admin removal reports wiki page. 
-						subreddit.wiki.create("AdminRemovalReport", "Report coming soon...", reason="Wikipage Creation")             
+						subreddit.wiki.create(name="AdminRemovalReport", content="Report coming soon...", reason="Wikipage Creation")
+						time.sleep(2)           
 
 					except APIException as e:
 						if e.error_type == 'NO_INVITE_FOUND':
