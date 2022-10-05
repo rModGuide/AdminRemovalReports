@@ -1,4 +1,4 @@
-#  AdminRemovalsReportBot v2.0 by u/BuckRowdy
+#  AdminRemovalsReportBot v1.0 by u/BuckRowdy
 #  Add this bot with wiki and manage user perms only.
 
 from pmaw import PushshiftAPI
@@ -11,7 +11,7 @@ from praw.models import Message
 
 # Log in to reddit
 try:
-	reddit = praw.Reddit(   user_agent = 'AdminRemovalsReportBot v.2 by u/BuckRowdy to gather info from the mod log.',
+	reddit = praw.Reddit(   user_agent = 'AdminRemovalsReportBot v.1s by u/BuckRowdy to gather info from the mod log.',
 				client_id = '',
 				client_secret = '',
 				username = '',
