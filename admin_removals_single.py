@@ -24,6 +24,7 @@ print(f'Logged in as: {reddit.user.me()}')
 
 # Connect to the pushshift api via pmaw
 api = PushshiftAPI()
+# Define the subreddit to work on.
 subreddit = 'YOUR_SUBREDDIT'
 
 def check_mod_log():
