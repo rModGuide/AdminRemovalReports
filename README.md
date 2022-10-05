@@ -21,7 +21,7 @@ There are three files in the repository.  A version for a single subreddit, a ve
 - Rename the script (if desired) once you have cloned or downloaded it. 
 - Designed to run on a single subreddit via a cronjob or scheduled task.
 - On lines 14-17, enter your bot's account credentials. **[See here for how to do that.](https://www.reddit.com/r/modguide/comments/s3xwbu/how_to_run_a_basic_python_script_for_reddit_from/)** 
-- On line 30, define the subreddit to work on.
+- On line 29, define the subreddit to work on.
 
 **admin_removals_multi.py**
 - Designed to run on the entire modlist of the bot account.  If you add this bot with manage wiki and manage user perms, it will post a report in the subreddit/wiki/adminremovalreport page for each sub on the list.  If the page doesn't exist, it will be created.  
