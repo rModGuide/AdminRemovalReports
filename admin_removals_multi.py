@@ -119,7 +119,7 @@ def check_mod_log():
 							else:
 								target_title = 'No title text found'
 						# Add each admin removal comment to a list set up for a reddit markdown table.
-						user_posts.append(f'{target_title} | {log_mod} | u/{target_author} | {user_banned} | {time_stamp} | [link]({target_link})')
+						user_posts.append(f'{target_title} | {log_mod} | u/{target_author} | {user_banned} | {time_stamp} | [{submission_id}]({target_link})')
 						# Count the number of admin removed submissions.
 						posts_counter = len(user_posts)
 
