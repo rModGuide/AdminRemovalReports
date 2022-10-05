@@ -6,6 +6,7 @@ from datetime import datetime as datetime
 import praw
 import traceback
 import time
+from praw.models import Message
 
 
 # Log in to reddit
