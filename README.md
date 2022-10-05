@@ -30,7 +30,7 @@ There are three files in the repository.  A version for a single subreddit, a ve
 - No need to define a subreddit to work on.  
 
 **admin_removals_autoinvite.py**
-- When the bot starts up it check its inbox for mod invites, then auto accept them. 
+- When the bot starts up it will check its inbox for mod invites, then auto accept them. 
 - Otherwise it is the same version as the multisub version.
 - This version is handy if you plan to add the bot to more than one subreddit so that you don't have to login to the bot account to accept.  If you have this bot running on a schedule, once it starts up on its next run, it will add that sub to it's list, mesage the sub that it has accepted and is preparing a report.  Then it will message when the report is posted. 
 
