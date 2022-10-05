@@ -164,8 +164,9 @@ def check_mod_log():
 		message_body = '**Weekly admin action summary:**\n\n'+posts_table_header+new_post_list+'\n\n'+comment_table_header+new_comment_list+'\n\n'+other_table_header+new_other_post_list
 		message_body_selftext = f'Your weekly admin action summary has been updated.\nPlease visit [this wiki page](http://reddit.com/r/{subreddit}/wiki/AdminRemovalReport) for your summary.'
 		message_title = f'Your weekly Admin Removal Report is ready.'
-		# reddit.subreddit(subreddit.display_name).message(
-		# 	subject=message_title, message=message_body_selftext)		
+		# Send notificaiton to subreddit modmail that update has been posted. 
+		reddit.subreddit(subreddit.display_name).message(
+			subject=message_title, message=message_body_selftext)		
 		# Edit your wiki page to add the tables.
 		reddit.subreddit(subreddit.display_name).wiki['AdminRemovalReport'].edit(content=f'{message_body}', reason='admin removal report update')             
 		# Print to the terminal when this subreddit is finished processing.
