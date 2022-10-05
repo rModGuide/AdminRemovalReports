@@ -1,4 +1,4 @@
-#  AdminRemovalsReport bot v2.0 by u/BuckRowdy
+#  AdminRemovalsReport bot v1.0 by u/BuckRowdy
 #  Add this bot with wiki perms only.
 
 from pmaw import PushshiftAPI
@@ -6,11 +6,10 @@ from datetime import datetime as datetime
 import praw
 import traceback
 import time
-import sys
 
 # Login to reddit
 try:
-	reddit = praw.Reddit(   user_agent = 'AdminRemovalReportBot v2.0 by u/BuckRowdy to gather info from the mod log',
+	reddit = praw.Reddit(   user_agent = 'AdminRemovalReportBot v1.0 by u/BuckRowdy to gather info from the mod log',
 				client_id = '',
 				client_secret = '',
 			        user_name = '',
@@ -20,7 +19,7 @@ try:
 except Exception as e:
 	print(f"\t### ERROR - Could not login.\n\t{e}")
 	traceback.print_exc()
-	sys.exit(1)
+	
 
 print(f'Logged in as: {reddit.user.me()}')
 
@@ -33,9 +32,9 @@ def check_mod_log():
 	"""This script runs on a weekly schedule on crontab, or can be run manually.  
 	   It polls the mod log for admin-level removals in the past 7 days.
 	   It will create three tables: comments, posts, and a catch-all for all other mod actions.
-	   The bot updates a wiki page in your subreddit, with the data.
+	   The bot updates a wiki page in your subreddit with the data.
 	   It will contact PushShift for the original text of comments and reproduce them if possible. 
-	   This is a multi-sub version of the bot, a single sub version is also included in this repo.   
+	   This is a single sub version of the bot, a multi-sub version is also included in this repo.   
 	"""
 	print('Now processing your mod log...')
 	# Set up a variable for finding the last 7 days worth of posts. 
@@ -82,7 +81,7 @@ def check_mod_log():
 						else:
 							body_text = 'No comment body text found'	
 					# Add each admin removal comment to a list set up for a reddit markdown table. 
-					user_comments.append(f'{body_text} | {log.mod} | u/{target_author} | {user_banned} | {time_stamp} | [{thread_id}]({target_link})')
+					user_comments.append(f'{body_text} | {log_mod} | u/{target_author} | {user_banned} | {time_stamp} | [{thread_id}]({target_link})')
 					# Count the number of admin removed comments.
 					comment_counter = len(user_comments)
 					
@@ -129,7 +128,6 @@ def check_mod_log():
 		if posts_counter > 0:
 			# for post in user_posts:
 			new_post_list = '\n'.join(user_posts)
-				# print(new_post_list)
 		else:
 			new_post_list = 'None found'
 	
@@ -158,17 +156,17 @@ def check_mod_log():
 			new_other_post_list = 'None found'
 
 		# Reddit markdown table headers, modmail message subject and body.
-		comment_table_header = f'**Comments Removed:** {comment_counter}\n\nMod | User | Banned | When | Body | Thread ID\n---|---|---|---|---|---\n'
-		posts_table_header = f'**Submissions Removed:** {posts_counter}\n\nTitle | Mod | User | Banned | When | Thread ID\n---|---|---|---|---|---\n'
+		comment_table_header = f'**Comments Removed:** {comment_counter}\n\nBody | Mod | User | Banned | When | Thread ID\n---|---|---|---|---|---\n'
+		posts_table_header = f'**Submissions Removed:** {posts_counter}\n\nTitle | Mod | User | Banned | When | Link\n---|---|---|---|---|---\n'
 		other_table_header = f'**Other Actions:** {other_counter}\n\nAction | Mod | When\n---|---|---\n\n'
 		message_body = '**Weekly admin action summary:**\n\n'+posts_table_header+new_post_list+'\n\n'+comment_table_header+new_comment_list+'\n\n'+other_table_header+new_other_post_list
 		message_body_selftext = f'Your weekly admin action summary has been updated.\nPlease visit [this wiki page](http://reddit.com/r/{subreddit}/wiki/AdminRemovalReport) for your summary.'
 		message_title = f'Your weekly Admin Removal Report is ready.'
 		# Send notificaiton to subreddit modmail that update has been posted. 
-		reddit.subreddit(subreddit.display_name).message(
+		reddit.subreddit(subreddit).message(
 			subject=message_title, message=message_body_selftext)		
 		# Edit your wiki page to add the tables.
-		reddit.subreddit(subreddit.display_name).wiki['AdminRemovalReport'].edit(content=f'{message_body}', reason='admin removal report update')             
+		reddit.subreddit(subreddit).wiki['AdminRemovalReport'].edit(content=f'{message_body}', reason='admin removal report update')             
 		# Print to the terminal when this subreddit is finished processing.
 		print(f'> Done with r/{subreddit}')
 		# In case of rate limits on sending modmails. 
