@@ -166,9 +166,9 @@ def check_mod_log():
 			# Scan the mod log for admin-level non-removal actions.
 			for log in reddit.subreddit(subreddit.display_name).mod.log(mod='a'):		
 				action_blacklist  = [ 		
-									'removelink',
-									'removecomment'
-									]
+							'removelink',
+							'removecomment'
+						    ]
 				if log.action not in action_blacklist:
 					if log.created_utc >= last_pass:
 						time_stamp = datetime.fromtimestamp(int(log.created_utc)).strftime('%m/%d/%Y at %H:%M')	
