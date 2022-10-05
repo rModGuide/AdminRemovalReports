@@ -172,7 +172,7 @@ def check_mod_log():
 			time.sleep(10)
 
 		except Exception as e:
-			print(f'\t### ERROR - Could not login.\n\t{e}')
+			print(f'\t### ERROR - Something went wrong.\n\t{e}')
 			traceback.print_exc()
 				
 
