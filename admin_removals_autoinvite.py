@@ -11,11 +11,11 @@ import time
 # Log in to reddit
 try:
 	reddit = praw.Reddit(   user_agent = 'AdminRemovalsReportBot v.2 by u/BuckRowdy to gather info from the mod log.',
-							            client_id = '',
-							            client_secret = '',
-							            username = '',
-                          password = ''
-                       )
+				client_id = '',
+				client_secret = '',
+				username = '',
+                         	password = ''
+                       		)
 
 except Exception as e:
 	print(f'\t### ERROR - Could not login.\n\t{e}')
