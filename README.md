@@ -8,7 +8,7 @@ This bot is designed to run as a cronjob, once a week.  In windows this is done 
 
 Cronjobs on MacOS and Linux are done via the [crontab](https://betterprogramming.pub/https-medium-com-ratik96-scheduling-jobs-with-crontab-on-macos-add5a8b26c30).
 
-The bot account needs `manage wiki` and `manage users` perms.  The only reason it needs manage users is to check if user is banned.  
+The bot account needs `manage wiki` and `manage users` perms.  The only reason it needs manage users is to check if user is banned. It is not currently set up to check if it has the perms it needs.  If it doesn't have the right perms the bot will crash.  Perm check will come in a future update. 
 
 This bot was written for python 3.9 and the most recent versions of PRAW and PMAW. Install both of those modules via these links [PRAW](http://praw.readthedocs.io) and [PMAW](https://pypi.org/project/pmaw/).
 
