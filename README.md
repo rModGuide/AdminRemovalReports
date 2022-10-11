@@ -12,7 +12,7 @@ The bot account needs `manage wiki` and `manage users` perms.  The only reason i
 
 This bot was written for python 3.9 and the most recent versions of PRAW and PMAW. Install both of those modules via these links [PRAW](http://praw.readthedocs.io) and [PMAW](https://pypi.org/project/pmaw/).
 
-There are three files in the repository.  A version for a single subreddit, a verison for multiple subreddits, and a multisub version that auto accepts mod invites.  This version is really just for if you want to add the bot to subreddits in the future and don't want to have to login to the bot account to accept the invites.  If you have the bot set up a cronjob cycle it will accept and run the report when it next runs.
+There are three files in the repository.  A version for a single subreddit, a verison for multiple subreddits, and a multisub version that auto accepts mod invites.  This version is really just for if you want to add the bot to subreddits in the future and don't want to have to login to the bot account to accept the invites.  If you have the bot set up on a cronjob cycle it will accept and run the report when it runs next.
 
 ---
 **Versions**
