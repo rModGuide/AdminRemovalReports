@@ -40,3 +40,4 @@ There are three files in the repository.  A version for a single subreddit, a ve
 - This version is handy if you plan to add the bot to more than one subreddit so that you don't have to login to the bot account to accept.  If you have this bot running on a schedule, once it starts up on its next run, it will add that sub to its list, mesage the sub that it has accepted and is preparing a report.  Then it will message when the report is posted. 
 
 
+If you would like to add this bot to your subreddit instead of running your own instance of it, please message me.
