@@ -17,19 +17,24 @@ There are three files in the repository.  A version for a single subreddit, a ve
 ---
 **Versions**
 
+**All Versions**
+- Add this bot with manage wiki and manage user perms. It will post a report in the subreddit/wiki/adminremovalreport page; if the wiki page doesn't exist, it will be created. It will then notify the sub via modmail that a new report has been posted.  If the bot HAS mail perms it will start a new mod discussion.  Those can't be archived and will clog up the folder making more importand discussions hard to find. The bot will never ban or action a user, the `manage users` perm is only for checking if the actioned user is already banned in your subreddit.
+
 **admin_removals_single.py**
-- Rename the script (if desired) once you have cloned or downloaded it. 
+- Rename the script (if desired) once you have cloned or downloaded it.   
 - Designed to run on a single subreddit via a cronjob or scheduled task.
 - On lines 14-17, enter your bot's account credentials. **[See here for how to do that.](https://www.reddit.com/r/modguide/comments/s3xwbu/how_to_run_a_basic_python_script_for_reddit_from/)** 
 - On line 29, define the subreddit to work on.
 
 **admin_removals_multi.py**
+- Rename the script (if desired) once you have cloned or downloaded it.
 - Designed to run on the entire modlist of the bot account.  If you add this bot with manage wiki and manage user perms, it will post a report in the subreddit/wiki/adminremovalreport page for each sub on the list.  If the page doesn't exist, it will be created.  
-- Processing reports in high volume subs can give the impression the bot is stalled.  It will notify when it has cycled for each subredit. 
+- Processing reports in high volume subs can give the impression the bot is stalled.  It will notify when it has cycled for each subreddit. 
 - On lines 15-19, enter the login credentials for the bot account.  **[See here for how to do that.](https://www.reddit.com/r/modguide/comments/s3xwbu/how_to_run_a_basic_python_script_for_reddit_from/)** 
 - No need to define a subreddit to work on.  
 
 **admin_removals_autoinvite.py**
+- Rename the script (if desired) once you have cloned or downloaded it.
 - When the bot starts up it will check its inbox for mod invites, then auto accept them. 
 - Otherwise it is the same version as the multisub version.
 - This version is handy if you plan to add the bot to more than one subreddit so that you don't have to login to the bot account to accept.  If you have this bot running on a schedule, once it starts up on its next run, it will add that sub to its list, mesage the sub that it has accepted and is preparing a report.  Then it will message when the report is posted. 
